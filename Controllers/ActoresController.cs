@@ -70,6 +70,7 @@ namespace PeliculasAPI.Controllers
                 }
             }
             context.Add(actorNew);
+
            await context.SaveChangesAsync();
             return CreatedAtRoute("ActorId",new {Id = actorNew.Id},actorCreacionDTO);
         }

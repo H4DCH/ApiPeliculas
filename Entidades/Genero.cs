@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
+using System.ComponentModel.DataAnnotations;
 
 namespace PeliculasAPI.Entidades
 {
@@ -10,5 +11,6 @@ namespace PeliculasAPI.Entidades
         [Required]
         [StringLength(40)]
         public string Nombre { get; set; }
+        public List<PeliculasGeneros> PeliculasGeneros { get; set; }
     }
 }

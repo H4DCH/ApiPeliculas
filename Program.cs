@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers().AddNewtonsoftJson();
 
-builder.Services.AddScoped<IAlmacenadorArchivos, AlmacenadorArchivos>();
+builder.Services.AddTransient<IAlmacenadorArchivos, AlmacenadorArchivos>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddDbContext<Context>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Conexion")));
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
